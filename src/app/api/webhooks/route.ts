@@ -53,7 +53,7 @@ export async function POST(req: Request) {
       email: email_addresses[0].email_address,
       firstName: first_name,
       lastName: last_name,
-      username: username!,
+      username: username || email_addresses[0].email_address.split('@')[0],
       photo: image_url,
     };
 

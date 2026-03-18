@@ -1,32 +1,32 @@
-import {Schema,model,models}from "mongoose";
-import { stringify } from "node:querystring";
-const userSchema =new Schema({
-    clerkId:{
-        type:String,
-        required:true,
-        unique:true,
-    },
-    email:{
-        type:String,
-        required:true
-    },
-    firstName:{
-        type:String,
-        required:true,
-    },
-    lastName:{
-        type:String,
-        required:true,
+import { Schema, model, models } from "mongoose";
 
-    },
-    username:{
-        type:String,
-        required:true,
-    },
-    avatar:{
-        type:String,
-        required:true,
-    }
-},{timestamps:true});
-const User=models.User||model("User",userSchema)
+const userSchema = new Schema({
+  clerkId: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  firstName: {
+    type: String,
+    required: false,
+  },
+  lastName: {
+    type: String,
+    required: false,
+  },
+  username: {
+    type: String,
+    required: false,
+  },
+  photo: {
+    type: String,
+    required: false,
+  },
+}, { timestamps: true });
+
+const User = models.User || model("User", userSchema);
 export default User;
